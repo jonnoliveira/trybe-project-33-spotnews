@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from news_rest.views.categories_view import CategoryViewSet
 from rest_framework import routers
+from news_rest.views.categories_view import CategoryViewSet
+from news_rest.views.users_view import UserViewSet
 
 router = routers.DefaultRouter()
 router.register(r"categories", CategoryViewSet)
+router.register(r"users", UserViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
